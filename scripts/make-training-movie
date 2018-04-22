@@ -1,0 +1,9 @@
+#!/bin/bash
+
+dir=$1
+input_dir=$dir/raw-plots
+output_dir=$dir/plots
+mkdir -p $output_dir
+output=$output_dir/training-movie.mp4
+rm -f output
+ffmpeg -framerate 8 -i $input_dir/plot-%d.png -c:v libx264 -profile:v high -crf 20 -pix_fmt yuv420p $output

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+convert -resize 600x600 -delay 10 -loop 0 `ls -tr *.png` animated.mp4
